@@ -1,0 +1,91 @@
+YAPILDI
+Global search
+onlyoffice güncellemede sorunlar var
+dosya yüklemede tarih prefix gerek yok
+Auto save olmasın
+Dosya isim limiti arttırılacak
+Dosya yönlendir gönder mail vs
+
+
+YAPILACAK
+Kat bazında olacak alanlar
+Kolon - Perde — Hesaplanan Beton Miktarı
+Kolon - Perde — Dökülen Beton Miktarı
+
+Döşeme — Hesaplanan Beton Miktarı
+Döşeme — Dökülen Beton Miktarı
+
+Planlanan Beton Döküm Tarihi 
+Beton Döküm Tarihi
+
+
+
+
+
+YAPILACAKLAR
+Kat bazında olacak alanlar
+Kat Adı
+Kat Notu
+Kolon - Perde — Planlanan Beton Miktarı(kat oluşturmada oluşturulacaktır)
+Kolon - Perde — Dökülen Beton Miktarı
+
+Döşeme — Planlanan Beton Miktarı(kat oluşturmada oluşturulacaktır)
+Döşeme — Dökülen Beton Miktarı
+
+Planlanan Beton Döküm Tarihi
+Beton Döküldü Mü
+Beton Döküm Tarihi
+
+
+YENI NOTLAR (2026-04-12)
+1) Santiye tamamlandiginda aksiyon
+- Beklenti: "Arsivle" veya "Kaldir" secenegi olmali.
+- Mevcut durum: Sadece "Sil" var.
+- Teknik not: DB'de santiye durum/arsiv alani yok. Soft archive icin yeni alan ya da ek tablo gerekli.
+
+2) Gorevler sayfasi - tek seferlik gorev
+- Beklenti: Tek seferlik gorev eklenebilmeli.
+- Gerekli alanlar: Gorev + baslangic tarihi + bitis tarihi.
+- Mevcut durum: Sadece donemsel period (gun/hafta/ay/yil) var.
+- Teknik not: gorevler.period check constraint guncellenmeli (tek_sefer eklenmeli) veya ayri gorev_tipi alanina gecilmeli.
+
+3) Dashboard - tahmini bitis metrikleri
+- Beklenti: Isin baslangic tarihi ve bugune kadar gecen sureden tahmini bitis tarihi hesaplanmali.
+- Onerilen hesap: gecen_sure / tamamlanma_orani = toplam_sure, toplam_sure + baslangic_tarihi = tahmini_bitis.
+- Teknik not: santiye bazli baslangic tarihi tutulmuyor; ek alan gerekir.
+
+4) Santiye masraflari bolumu
+- Beklenti: Aylik giris yapilacak.
+- Alanlar: Resmi gider, gayri resmi gider.
+- Cikti: Yapilan m2 / gider => m2 basi maliyet.
+- Teknik not: masraf tablosu ve (donem, santiye_id) uniq kayit kurali gerekli.
+
+5) Dashboard'daki santiye/blok grafigi
+- Istek: Santiyeler sayfasina da eklenmesi istenmis olabilir.
+- Durum: Net degil, dogrulama gerekli.
+
+6) Bloklar sayfasi santiye secimi
+- Istek: Buton grubu yerine dropdown menu.
+- Ek not: Planlanan tarih alani bir ara istendi, sonra simdilik dursun denildi.
+
+
+
+
+
+25.04.26
+Şantiye tamamlandıktan sonra ne olacak? Arşivle kaldır gibi bir şey olması lazım.
+
+Görevler sayfası:
+Tek seferlik görev eklenebilmeli, görev + başlangıç bitiş tarihi gibi bilgiler girilebilir.
+
+Dashboard:
+işin başlangıç tarihi, şuana kadar yapılan zaman denkleminden = tahmini bitiş tarihi gibi metrajları göstermeli
+
+istediğim bu
+şantiyelerin teslim tarihi var elinde çalışma temposuna göre tahmini bitiş tarihi gibi veriler göster
+
+şantiyenin aylık maliyeti ve yaptığı iş var m2 maliyeti çıkar göster 
+
+ve bu verileri öne çıkar
+
+Şantiye masrafları diye bir bölüm istedi: Aylık giriş yapılacak Resmi ve Gayri resmi iki alandan giriş yapacak. Yapılan mt2/ giderden = mt2 başı maliyeti görmek istiyor
